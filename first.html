@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria Maksylewicz | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cube-container">
+        
+        <section class="panel cover">
+            <div class="overlay">
+                <h1 class="font">VICTORIA</h1>
+                <h1 class="font">MAKSYLEWICZ</h1>
+                <p class="subtitle">Computer Science Student</p>
+            </div>
+        </section>
+
+        <section class="panel content-list">
+            <div class="list-wrapper">
+                <h2>Project Shortlist</h2>
+                <hr>
+                <ul class="project-links">
+                    <li><strong>TicTacToe</strong> — A Simple Tic Tac Toe game</li>
+                </ul>
+
+                <h2 class="ed-title">Education</h2>
+                <hr>
+                <div class="education">
+                    <p><span class="year">2025-2029</span><strong> Computer Science</strong>, West Pomeranian University of Technology in Szczecin, Poland</p>
+                </div>
+
+                <h2 class="things-title">Things I like</h2>
+                <hr>
+                <div class="thgs">
+                    <p>Cultural exchanges, collecting vintage fashion pieces, tennis, boba tea (especially the brown sugar one), volunteering, visiting new places, and hanging out with people i love and adore. </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel gallery-section">
+            <h2 class="gallery-title">Projects</h2>
+            <div class="scroll-wrapper">
+                <a href="https://github.com/victoriamak7/tic_tac_toe" target="_blank" class="project-item">
+                    <div class="frame"><img src="project1.jpg" alt="P1"></div>
+                </a>
+                <a href="#" class="project-item"><div class="frame"><img src="project2.jpg" alt="P2"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project3.jpg" alt="P3"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project4.jpg" alt="P4"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project5.jpg" alt="P5"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project6.jpg" alt="P6"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project7.jpg" alt="P7"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project8.jpg" alt="P8"></div></a>
+                <a href="#" class="project-item"><div class="frame"><img src="project9.jpg" alt="P9"></div></a>
+            </div>
+            <h2 class = "li-title" >Reach out!</h2>
+            <hr>
+            <div class ="links">
+                <p><a href="www.linkedin.com/in/victoriamaksylewicz" target="_blank">
+            <strong>Linkedin</strong><i class="bi bi-box-arrow-up-right"></i>
+        </a> 
+        </p>
+                <p><a href="https://github.com/victoriamak7" target="_blank">
+                    <strong>GitHub</strong><i class="bi bi-box-arrow-up-right"></i>
+            
+                    
+        </a>
+    </p>
+            </div> 
+        </section>
+
+    </div>
+
+    <script>
+        // Script to highlight the center frame
+        const items = document.querySelectorAll('.project-item');
+        const wrapper = document.querySelector('.scroll-wrapper');
+
+        const observerOptions = {
+            root: wrapper,
+            threshold: 0.6
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    items.forEach(item => item.classList.remove('active'));
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        items.forEach(item => observer.observe(item));
+    </script>
+</body>
+</html>
